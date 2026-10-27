@@ -21,7 +21,29 @@ var db;
 
 // Check MongoDB environment variable
 console.log("MongoDB URI exists:", !!process.env.MONGODB_URI);
+// TEMPORARY TLS CONNECTION TEST
+const tls = require('tls');
 
+const testHost = 'ac-39imifd-shard-00-00.bidyrf7.mongodb.net';
+
+const testConnection = tls.connect({
+  host: testHost,
+  port: 27017,
+  servername: testHost,
+  timeout: 10000
+}, () => {
+  console.log('TLS TEST: CONNECTION SUCCESSFUL');
+  testConnection.end();
+});
+
+testConnection.on('error', (err) => {
+  console.log('TLS TEST ERROR:', err.message);
+});
+
+testConnection.on('timeout', () => {
+  console.log('TLS TEST: CONNECTION TIMED OUT');
+  testConnection.destroy();
+});
 
 // EXPRESS CONFIGURATION =======================================================
 
