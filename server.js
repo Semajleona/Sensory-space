@@ -54,7 +54,8 @@ require('./config/passport')(passport);
 mongoose.connect(configDB.url, {
   dbName: configDB.dbName,
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+    tls: true
 }, (err) => {
 
   if (err) {
