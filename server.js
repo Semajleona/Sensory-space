@@ -23,8 +23,12 @@ var db
 //const configDB = { "url": process.env.MONGODB_URI }
 console.log("MongoDB URI exists:", !!process.env.MONGODB_URI)
 // configuration ===============================================================
-mongoose.connect(configDB.url, { dbName: configDB.dbName }, (err, database) => {
-
+//mongoose.connect(configDB.url, { dbName: configDB.dbName }, (err, database) => {
+mongoose.connect(configDB.url, {
+  dbName: configDB.dbName,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}, (err, database) => {
   if (err) return console.log(err)
   db = mongoose.connection.db
   console.log('Database connected:', mongoose.connection.name)
