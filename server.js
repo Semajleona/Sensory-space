@@ -50,8 +50,10 @@ require('./config/passport')(passport);
 
 
 // MONGODB CONNECTION ==========================================================
-
-mongoose.connect(configDB.url, {
+// Show homepage even when MongoDB is unavailable
+app.get('/', (req, res) => {
+  res.render('index.ejs');
+});mongoose.connect(configDB.url, {
   dbName: configDB.dbName,
   useNewUrlParser: true,
   useUnifiedTopology: true,
