@@ -17,10 +17,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-//var configDB = require('./config/database.js');
+var configDB = require('./config/database.js');
 
 var db
-const configDB = { "url": process.env.MONGODB_URI }
+//const configDB = { "url": process.env.MONGODB_URI }
 console.log("MongoDB URI exists:", !!process.env.MONGODB_URI)
 // configuration ===============================================================
 mongoose.connect(configDB.url, { dbName: configDB.dbName }, (err, database) => {
