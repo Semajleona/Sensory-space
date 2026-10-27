@@ -1,0 +1,96 @@
+body {
+  padding-top: 80px;
+  word-wrap: break-word;
+  background-image: url('/img/Dreamy Cosmic Adventure Playground.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.topBox,
+.bottomBox {
+  background-color: white;
+  padding: 20px;
+  border: 30px;
+  margin-top: 25px;
+}
+
+.topBox h2,
+.bottomBox h3 {
+  color: #151c44;
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #151c44;
+  border-radius: 10px;
+}
+
+.secondinput {
+  padding: 10px;
+  border: 1px solid #151c44;
+  border-radius: 10px;
+  width: 715px;
+}
+
+.header {
+  background-color: #151c44;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  color: white;
+}
+
+button {
+  font-weight: 900;
+  background-color: orange;
+  color: green;
+  border-radius: 15px;
+  cursor: pointer;
+
+}
+
+.bottomBox ul {
+  list-style: none;
+}
+
+.bottomBox li {
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.activityButtons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.loginBox {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.loginBox h1 {
+  color: #151c44;
+}
+
+.loginBox button {
+  background-color: blueviolet;
+  color: white;
+  border: none;
+}
+
+.jumbotron img {
+  width: 800px;
+}

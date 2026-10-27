@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>My Sensory Space Library</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>My Sensory Space Library</h1>
+            <p>Activities Created Just For Me</p>
+        </div>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+
+
+        <div class="topBox">
+            <h2>ADD AN ACTIVITY!</h2>
+
+
+            <% if (user.local.email) { %>
+                <form action="/activities" method="POST">
+                    <input type="text" name="nameOfActivity" placeholder="Activity Name:" required>
+                    <input type="text" class="secondinput" name="description" placeholder=" Activity Description:"
+                        required>
+                    <button type="submit">ADD NEW ACTIVITY</button>
+
+                </form>
+        </div>
+
+        <div class="bottomBox">
+            <h3>My Activities</h3>
+
+            <ul>
+
+                <% for(var i=0; i<activities.length; i++) {%>
+                    <li>
+                        <span>
+                            <%= activities[i].nameOfActivity %>
+                        </span>
+                        <p>
+                            <%= activities[i].description %>
+                                <%# gets the current activity from the array and displays the description of it %>
+                        </p>
+                        <section class="listButtons">
+                            <div class="activityButtons">
+                                <button type="button" onclick="editMyActivity(this)">EDIT ACTIVITY</button>
+
+
+                                <form action="/activities/delete" method="POST">
+                                    <input type="hidden" name="id" value="<%= activities[i]._id %>">
+                                    <button type="submit">DELETE ACTIVITY</button>
+                                </form>
+                            </div>
+
+
+                            <form action="/activities/update" method="POST" class="editList" hidden>
+                                <input type="hidden" name="id" value="<%= activities[i]._id %>">
+                                <input type="text" name="nameOfActivity" value="<%= activities[i].nameOfActivity %>"
+                                    required>
+                                <input type="text" name="description" value="<%= activities[i].description %>" required>
+                                <button type="submit">SAVE ACTIVITY</button>
+                            </form>
+                        </section>
+
+                    </li>
+
+                    <% } %>
+
+
+            </ul>
+
+            <% } %>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
