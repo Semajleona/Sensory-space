@@ -1,8 +1,11 @@
 const { ObjectId } = require('mongodb');
 
 module.exports = function (app, passport, db) {
+const PORT = process.env.PORT || 8080;
 
-// HOMEPAGE
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`The magic happens on port ${PORT}`);
+});// HOMEPAGE
 app.get('/', (req, res) => {
   res.render('index.ejs');
 });
@@ -47,7 +50,7 @@ app.get('/signup', (req, res) => {
 
   // MESSAGE BOARD ==============================================
 // CREATE ACTIVITY
-app.post('/activities', isLoggedIn, (req, res) => {
+app.post('/updated', isLoggedIn, (req, res) => {
 
   db.collection('activities').insertOne({
     nameOfActivity: req.body.nameOfActivity,
@@ -64,7 +67,6 @@ app.post('/activities', isLoggedIn, (req, res) => {
     res.redirect('/profile');
 
   });
-
 });
 
 
