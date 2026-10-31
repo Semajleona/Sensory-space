@@ -2,12 +2,24 @@ const { ObjectId } = require('mongodb');
 
 module.exports = function (app, passport, db) {
 
-  // HOME PAGE ==================================================
-  app.get('/', function (req, res) {
-    res.render('index.ejs');
+// HOMEPAGE
+app.get('/', (req, res) => {
+  res.render('index.ejs');
+});
+
+// LOGIN PAGE
+app.get('/login', (req, res) => {
+  res.render('login.ejs', {
+    message: req.flash('loginMessage')
   });
+});
 
-
+// SIGNUP PAGE
+app.get('/signup', (req, res) => {
+  res.render('signup.ejs', {
+    message: req.flash('signupMessage')
+  });
+});
   // PROFILE PAGE ===============================================
   app.get('/profile', isLoggedIn, function (req, res) {
     db.collection('activities')
