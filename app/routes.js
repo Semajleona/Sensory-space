@@ -46,21 +46,26 @@ app.get('/signup', (req, res) => {
 
 
   // MESSAGE BOARD ==============================================
+// CREATE ACTIVITY
+app.post('/activities', isLoggedIn, (req, res) => {
 
-  // CREATE MESSAGE
-  app.post('/messages', (req, res) => {
-    db.collection('messages').save({
-      name: req.body.name,
-      msg: req.body.msg,
-      thumbUp: 0,
-      thumbDown: 0
-    }, (err, result) => {
-      if (err) return res.status(500).send(err);
+  db.collection('activities').insertOne({
+    nameOfActivity: req.body.nameOfActivity,
+    description: req.body.description,
+    theUserId: req.user._id.toString()
+  }, (err, result) => {
 
-      console.log('saved to database');
-      res.redirect('/profile');
-    });
+    if (err) {
+      console.log('Error saving activity:', err);
+      return res.status(500).send('Error saving activity');
+    }
+
+    console.log('Activity saved successfully!');
+    res.redirect('/profile');
+
   });
+
+});
 
 
   // THUMBS UP
