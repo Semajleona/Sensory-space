@@ -2,61 +2,60 @@
 
 https://sensory-space-1.onrender.com
 
-Sensory Space Library 🌈
+# 🌈 Sensory Space Library
 
-Description
 
-Sensory Space Library is a full-stack CRUD web application designed to help caregivers create and manage a personalized library of sensory activities for children with developmental disabilities.
+## Project Description
 
-Caregivers can save sensory activities, including their names and descriptions, in one convenient location. The application makes it easy to organize, revisit, and update activities that support a child's sensory exploration, development, and everyday learning.
+Sensory Space Library is a full-stack CRUD web application that helps caregivers create and manage a personalized collection of sensory activities for children with developmental disabilities.
 
-Features
+Users can securely save, view, edit, and delete activities, keeping helpful resources organized in one convenient location.
 
-User Authentication: Caregivers can sign up, log in, and log out.
+## Tech Stack
 
-Create: Add new sensory activities with a name and description.
+- **Frontend:** HTML, CSS, JavaScript, EJS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **Authentication:** Passport.js
 
-Read: View saved sensory activities in a personalized library.
+## What I Learned
 
-Update: Edit existing activities and their descriptions.
+- Building a full-stack application using Node.js and Express.js
+- Implementing CRUD operations to create, read, update, and delete data
+- Connecting MongoDB to store and retrieve user-generated content
+- Using Passport.js to implement user authentication
+- Creating dynamic pages with EJS templates
+- Associating activities with individual users to create personalized libraries
 
-Delete: Remove activities that are no longer needed.
+## How to Run Locally
 
-Personalized Library: Each caregiver can manage their own collection of activities.
+1. Clone the repository:
 
-Tech Stack
+   ```bash
+   git clone YOUR_REPOSITORY_URL
+   ```
 
-EJS – Dynamic HTML templates
+2. Navigate into the project folder:
 
-JavaScript – Application functionality
+   ```bash
+   cd YOUR_PROJECT_FOLDER
+   ```
 
-CSS – Styling and layout
+3. Install dependencies:
 
-Node.js – Backend runtime environment
+   ```bash
+   npm install
+   ```
 
-Express.js – Server-side routing
+4. Configure your environment variables in `config/.env` with your MongoDB connection string and required authentication settings.
 
-MongoDB – Database for storing activities and user information
+5. Start the application:
 
-Passport.js – User authentication
+   ```bash
+   npm start
+   ```
 
-How It Works
-
-Caregivers create an account or log in.
-
-Add sensory activities with a name and description.
-
-View saved activities in their personal library.
-
-Edit activities to update information.
-
-Delete activities they no longer need.
-
-Project Purpose
-
-Sensory Space Library was created to provide caregivers with a simple, organized space to store sensory activities that support children with developmental disabilities.
-
-This project demonstrates full-stack web development, CRUD operations, user authentication, and database integration while addressing a practical need for caregivers.
+6. Open your browser and navigate to the local port configured for the application (for example, `http://localhost:8080`).
 
 
 
